@@ -1,6 +1,16 @@
 <?php 
-require_once 'actions/db_connect.php'; ?>
+ob_start();
+session_start();
+require_once 'db_connect.php'; 
 
+if( !isset($_SESSION['user']) ) {
+ header("Location: home.php");
+ exit;
+}
+
+$res=mysqli_query($conn, "SELECT * FROM users WHERE id=".$_SESSION['user']);
+$userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +22,10 @@ require_once 'actions/db_connect.php'; ?>
 
 </head>
 <body>
+   Hi <?php echo $userRow['email']; ?>
+    <a href="logout.php?logout">Sign Out</a>
+    
+
 
 <div class="manageItem">
   <a href="create.php"><button type="button">Add Item</button></a> 
@@ -53,5 +67,5 @@ require_once 'actions/db_connect.php'; ?>
             </div>
           </body>
           </html>
-          
+          <?php ob_end_flush(); ?>
      
