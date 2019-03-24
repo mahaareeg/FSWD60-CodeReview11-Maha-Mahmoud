@@ -1,5 +1,3 @@
-<?php require_once 'actions/db_connect.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,24 +7,46 @@
    
 
 </head>
-<body>
+<body> 
+	<fieldset>
 
    <legend>Add Item</legend>
-
-   
-           
-      <h2> Name</h2>
-      <h4>Type</h4>
-      <h6>Address</h6>
-      <p>Description</p>
-      <h6>Homepage</h6>
+   <form action="actions/a_create.php" method="post">
+       <table cellspacing="0" cellpadding="0">
+           <tr>
+         
+      <th> Name</th>
+      <td><input type="text" name="name" placeholder="Name" /></td>
+           </tr>
+           <tr>  
+      <th>Type</th>
+      <td><input type="text" name="type" placeholder="Type" /></td>
+  </tr>
+  <tr>
+      <th>Address</th>
+      <td><input type="text" name="address" placeholder="Address" /></td>
+  </tr>
+  
+  <tr>
+      <th>Homepage</th>
+      <td><input type="text" name="homepage" placeholder="Homepage" /></td>
                
-               
-           
-               <button type="submit">Insert Item</button></td>
-               <a href="index.php"><button type="button">Back</button></a>
-          
+               </tr> 
+                <tr>
       
+           
+           <tr>
+              <td> <button type="submit">Insert Item</button></td>
+              <td> <a href="index.php"><button type="button">Back</button></a> </td>
+
+           </tr>
+
+          
+
+      </table>
+   </form>
+
+</fieldset>
    
 
 

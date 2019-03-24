@@ -33,31 +33,34 @@ if(!$conn){
 
 		<div class="place" id="plac">
 
-			<img src="img/vienna.jpg"  />
+			<img src="img/restaurants.jpg"  />
 			<h1> Welcome To the Beautiful City- VIENNA
 		</div>
 		<br><br>
 		<br>
 		<div class="desc" id="one">
 
-			<h1> Places to visit in Vienna</h1>
+			<h1> Best Restaurants in Vienna</h1>
 			<br>
 <?php
 
-$sql = "SELECT cityname, name, type, address, description, homepage FROM places";
-$result = mysqli_query($conn , $sql); // to run our query that we wrote 1 line before
+$sql = "SELECT name, type, address, description, telephone, homepage FROM restaurants";
+$result = mysqli_query($conn , $sql); 
 
-$rows = $result->fetch_all(MYSQLI_ASSOC); // to convert the result from something that JUST mysqli understand to a normal array that we can loop inside it
+$rows = $result->fetch_all(MYSQLI_ASSOC); 
 
 
 foreach($rows as $val){
 
-	echo  "<h2>".$val["name"]."</h2>"."<h4>".$val["type"]."</h4>"."<br> ".$val["address"]."<br><br>".$val["description"]."<br><br>".$val["homepage"]."<br>"."<br>" ;
+	echo  "<h2>".$val["name"]."</h2>"."<h4>".$val["type"]."</h4>"."<br> ".$val["address"]."<br><br>".$val["description"]. "<br><br>".$val["telephone"]."<br><br>".$val["homepage"]."<br>" ;
 	
+
 
 }
 
+
 	?>
+
 	</div>
 </div>
 <footer> </footer>

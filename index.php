@@ -1,49 +1,57 @@
-<?php require_once 'actions/db_connect.php'; ?>
+<?php 
+require_once 'actions/db_connect.php'; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
    <title>Index</title>
+   <link rel="stylesheet" type="text/css" href="styl.css">
 
 
 </head>
 <body>
 
-<div class="manageUser">
-  <a href="create.php"><button type="button">Add Item</button></a>
-   <h2> Name</h2>
-      <h4>Type</h4>
-      <h6>Address</h6>
-      <p>Description</p>
-      <h6>Homepage</h6>
-               
-            
-      
+<div class="manageItem">
+  <a href="create.php"><button type="button">Add Item</button></a> 
+   <table border="1" cellspacing="0" cellpadding="0" id="tabb">
+       
+       
+        <tbody>
         <?php
-           $sql = "SELECT name,type,address,description,homepage FROM places";
+           $sql = "SELECT * FROM location";
            $result = $conn->query($sql);
 
            if($result->num_rows > 0) {
-               while($row = $result->fetch_assoc()) {
-                   echo "<h2>".$row['name']."</h2>"."<br>"."<h4>".$row['type']."</h4>"."<br>"."<h6>".$row['address']."</h6>"."<br>"."<p>".$row['description']."</p>"."<br>"."<h6>".$row['homepage']."</h6>"."<br>";
-}
-}
-?>
-                          
-                        "<a href='update.php?id=".$row['id']."'><button type='button'>Edit</button></a>";
-                         "<a href='delete.php?id=".$row['id']."'><button type='button'>Delete</button></a>";
-                       
+            while($row = $result->fetch_assoc()) {
+
+              echo "<tr>";
+              echo "<td><h2>".$row['name']."</h2></td><br>";
+              echo "<td><h4>".$row['type']."</h4></td><br>";
+              echo "<td><h4>".$row['address']."</h4></td><br>";
+              
+              echo "<td><h4>".$row['homepage']."</h4></td><br>";
+              echo "<td><img src='data:image/jpeg;base64,".base64_encode($row['image'])."' alt='' width='100' height='100' /></td><br>";
+              echo      
+             "<td>
+              <a href='update.php?id=".$row['id']."'><button type='button'>Edit</button></a>
+              <a href='delete.php?id=".$row['id']."'><button type='button'>Delete</button></a>
+              </td>";
+              echo "</tr>";
+              
+
+            }
+            } else {
+              echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
+            }
+            ?>
+
+          </tbody>
+        </table>
+
+            </div>
+          </body>
+          </html>
           
-
-               
-
-
-           ?>
-
-         
-</div>
-
-</body>
-</html>
-      
+     

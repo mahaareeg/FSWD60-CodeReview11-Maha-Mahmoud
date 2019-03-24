@@ -30,3 +30,14 @@ footer{
 	height: 100px;
 	background-color: darkblue;
 }
+.manageItem{
+background-color: lightgrey;
+ margin: auto;
+}
+#tabb{
+
+	margin-top: 0px;
+}
+tbody{
+	margin-top: 0px;
+}
