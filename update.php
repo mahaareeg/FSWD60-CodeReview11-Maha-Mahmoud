@@ -50,9 +50,9 @@ if($_GET['id']) {
       <th>Homepage</th>
       <td><input type="text" name="homepage" placeholder="Homepage" value="<?php echo $data['homepage'] ?>"  /></td>
                
-               </tr>    
-       
-               <tr>
+               </tr> 
+              
+                             <tr>
            
                <input type="hidden" name="id" value="<?php echo $data['id']?>" />
                <td><button type="submit">Save Changes</button></td>

@@ -6,6 +6,12 @@ if( isset($_SESSION['user'])!="" ){
 }
 include_once 'db_connect.php';
 $error = false;
+$username="";
+$email="";
+$usernameError="";
+$emailError="";
+$password="";
+$passwordError="";
 if ( isset($_POST['btn-signup']) ) {
  
  // sanitize user input to prevent sql injection
@@ -84,7 +90,12 @@ $password = hash('sha256', $password);
   
  }
 
-
+$username="";
+$email="";
+$usernameError="";
+$emailError="";
+$password="";
+$passwordError="";
 }
 ?>
 <!DOCTYPE html>
@@ -92,8 +103,7 @@ $password = hash('sha256', $password);
 <head>
 <meta charset="UTF-8">
   
-<html>
-<head>
+
 <title>Login and Register</title>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>

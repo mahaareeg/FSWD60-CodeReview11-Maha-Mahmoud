@@ -9,6 +9,9 @@ if ( isset($_SESSION['user'])!="" ) {
  exit;
 }
 
+$email="";
+$emailError="";
+$passwordError="";
 $error = false;
 
 if( isset($_POST['btn-login']) ) {

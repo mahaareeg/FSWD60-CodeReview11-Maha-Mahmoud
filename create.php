@@ -32,8 +32,7 @@
       <td><input type="text" name="homepage" placeholder="Homepage" /></td>
                
                </tr> 
-                <tr>
-      
+                 
            
            <tr>
               <td> <button type="submit">Insert Item</button></td>

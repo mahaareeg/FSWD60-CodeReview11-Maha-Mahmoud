@@ -25,19 +25,42 @@ height: auto;
 
 
 }
-footer{
-	width: 100%;
-	height: 100px;
-	background-color: darkblue;
-}
-.manageItem{
-background-color: lightgrey;
+
+.container-fluid1{
+background-color: lightblue;
  margin: auto;
 }
+
 #tabb{
 
 	margin-top: 0px;
 }
-tbody{
-	margin-top: 0px;
+
+header{
+	color: white;
+	background-color: darkblue; 
+}
+
+.navbar{
+	font-size: 18px;
+	background-color: darkblue; 
+
+	color: white;
+}
+
+.log{
+	float: right;
+	background-color: lightblue;
+}
+
+.dda{
+float: right;
+	background-color: lightblue;
+
+}
+
+footer{
+	width: 100%;
+	height: 100px;
+	background-color: darkblue;
 }
